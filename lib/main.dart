@@ -4,11 +4,13 @@ import 'demo/Drawer_demo.dart';
 import 'demo/BottomNavigationBar_demo.dart';
 import 'demo/BasicText_demo.dart';
 import 'demo/LayoutDemo.dart';
+import 'demo/View_demo.dart';
+import 'demo/Sliver_demo.dart';
 void main() => runApp(MyApp());
 
 //新建一个自己的app
 class MyApp extends StatelessWidget {
-  // 小部件的跟
+  // 小部件的根
   @override
   Widget build(BuildContext context) {
     //使用材料风格
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'My Flutter'),
+      home: MyHomePage(title: "my title",),
     );
   }
 }
@@ -33,7 +35,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 5,
       child: Scaffold(
         //头部
         appBar: AppBar(
@@ -51,6 +53,8 @@ class MyHomePage extends StatelessWidget {
                 Tab(icon: Icon(Icons.access_alarm)),
                 Tab(icon: Icon(Icons.accessibility)),
                 Tab(icon: Icon(Icons.account_balance)),
+                Tab(icon: Icon(Icons.cached)),
+                Tab(icon: Icon(Icons.date_range)),
               ]),
         ),
         //使用ListView.builder来创建一个列表 itemCount 列表条数  _listItemBuilder构建item的方法
@@ -58,6 +62,8 @@ class MyHomePage extends StatelessWidget {
           ListViewDemo(),
           BasicTextDemo(),
           LayoutDemo(),
+          View_demo(),
+          SliverDemo()
         ]),
         drawer: DrawerDemo(),
         bottomNavigationBar: BottomNavigationBarDemo(),
