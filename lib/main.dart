@@ -6,6 +6,8 @@ import 'demo/BasicText_demo.dart';
 import 'demo/LayoutDemo.dart';
 import 'demo/View_demo.dart';
 import 'demo/Sliver_demo.dart';
+import 'demo/form_demo.dart';
+
 void main() => runApp(MyApp());
 
 //新建一个自己的app
@@ -22,7 +24,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: "my title",),
+      initialRoute: '/form',
+      routes: {
+        '/': (context) => MyHomePage(title: "my title"),
+        '/form': (context) => FormDemo(),
+      },
+//      home: MyHomePage(title: "my title",),
     );
   }
 }
