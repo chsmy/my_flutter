@@ -6,6 +6,10 @@ import 'checkbox_demo.dart';
 import 'radio_demo.dart';
 import 'switch_demo.dart';
 import 'slider_demo.dart';
+import 'datetime_demo.dart';
+import 'dialog_demo.dart';
+import 'alert_dialog_demo.dart';
+import 'bottom_sheet_demo.dart';
 class MaterialComponentsDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,6 +29,10 @@ class MaterialComponentsDemo extends StatelessWidget {
           ListViewItem(title: "RadioDemo", page: RadioDemo()),
           ListViewItem(title: "SwitchDemo", page: SwitchDemo()),
           ListViewItem(title: "SliderDemo", page: SliderDemo()),
+          ListViewItem(title: "DateTimeDemo", page: DateTimeDemo()),
+          ListViewItem(title: "SimpleDialogDemo", page: SimpleDialogDemo()),
+          ListViewItem(title: "AlertDialogDemo", page: AlertDialogDemo()),
+          ListViewItem(title: "BottomSheetDemo", page: BottomSheetDemo()),
         ],
       ),
     );
