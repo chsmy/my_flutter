@@ -10,6 +10,11 @@ import 'datetime_demo.dart';
 import 'dialog_demo.dart';
 import 'alert_dialog_demo.dart';
 import 'bottom_sheet_demo.dart';
+import 'expend_demo.dart';
+import 'chip_demo.dart';
+import 'table_demo.dart';
+import 'table_demo_paging.dart';
+import 'card_demo.dart';
 class MaterialComponentsDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,12 @@ class MaterialComponentsDemo extends StatelessWidget {
           ListViewItem(title: "DateTimeDemo", page: DateTimeDemo()),
           ListViewItem(title: "SimpleDialogDemo", page: SimpleDialogDemo()),
           ListViewItem(title: "AlertDialogDemo", page: AlertDialogDemo()),
-          ListViewItem(title: "BottomSheetDemo", page: BottomSheetDemo()),
+          ListViewItem(title: "ExpandDemo", page: ExpandDemo()),
+          ListViewItem(title: "BottomSheetAndSnackBarDemo", page: BottomSheetDemo()),
+          ListViewItem(title: "ChipDemo", page: ChipDemo()),
+          ListViewItem(title: "TableDemo", page: TableDemo()),
+          ListViewItem(title: "PagingTableDemo", page: PagingTableDemo()),
+          ListViewItem(title: "CardDemo", page: CardDemo()),
         ],
       ),
     );

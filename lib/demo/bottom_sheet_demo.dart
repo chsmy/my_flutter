@@ -14,7 +14,7 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
     return Scaffold(
       key: _bottomSheetScaffoldKey,
       appBar: AppBar(
-        title: Text('ButtonDemo'),
+        title: Text('BottomSheetAndSnackBarDemo'),
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
@@ -34,6 +34,10 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
                   onPressed: _showModelBottomSheet,
                 ),
               ],
+            ),
+            FlatButton(
+              child: Text('showSnakBar'),
+              onPressed: _showSnackBar,
             )
           ],
         ),
@@ -89,5 +93,19 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
      );
    });
    print(option);
+  }
+
+  void _showSnackBar() {
+    debugPrint('_showSnackBar 点击了');
+
+    _bottomSheetScaffoldKey.currentState.showSnackBar(
+        SnackBar(
+          content: Text('Processing...'),
+          action: SnackBarAction(
+            label: 'OK',
+            onPressed: () {},
+          ),
+        )
+    );
   }
 }

@@ -1,14 +1,15 @@
 class Man{
-  const Man({
-    this.title,
-    this.name,
-    this.url,
-    this.desc
-});
   final String title;
   final String name;
   final String url;
   final String desc;
+  bool selected = false;
+  Man({
+    this.title,
+    this.name,
+    this.url,
+    this.desc,
+});
 }
 
  final List<Man> posts = [

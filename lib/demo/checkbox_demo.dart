@@ -46,6 +46,15 @@ class _CheckBoxDemoState extends State<CheckBoxDemo> {
                   checkColor: Colors.blue,
                   activeColor: Colors.black,
                 ),
+                 Checkbox(
+                   value: _checkBox,
+                   onChanged: (value) {
+                     setState(() {
+                       _checkBox = value;
+                     });
+                   },
+                   activeColor: Colors.black,
+                 ),
               ],
             )
           ],
