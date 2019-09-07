@@ -15,6 +15,7 @@ import 'chip_demo.dart';
 import 'table_demo.dart';
 import 'table_demo_paging.dart';
 import 'card_demo.dart';
+import 'step_line_demo.dart';
 class MaterialComponentsDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,7 @@ class MaterialComponentsDemo extends StatelessWidget {
           ListViewItem(title: "TableDemo", page: TableDemo()),
           ListViewItem(title: "PagingTableDemo", page: PagingTableDemo()),
           ListViewItem(title: "CardDemo", page: CardDemo()),
+          ListViewItem(title: "StepDemo", page: StepDemo()),
         ],
       ),
     );
