@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter/demo/stream/stream_demo.dart';
 import 'demo/ListView_demo.dart';
 import 'demo/Drawer_demo.dart';
 import 'demo/BottomNavigationBar_demo.dart';
@@ -8,6 +9,9 @@ import 'demo/View_demo.dart';
 import 'demo/Sliver_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
+import 'demo/state/state_manager_demo.dart';
+import 'demo/rxdart/rxdart_demo.dart';
+import 'demo/bloc/bloc_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,11 +29,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/mat',
+      initialRoute: '/bloc',
       routes: {
         '/': (context) => MyHomePage(title: "my title"),
         '/form': (context) => FormDemo(),
-        '/mat':(context)=>MaterialComponentsDemo()
+        '/mat':(context)=>MaterialComponentsDemo(),
+        '/state_manager':(context)=>StateModelDemo(),
+        '/stream':(context)=>StreamDemo(),
+        '/rxdart':(context)=>RxDartDemo(),
+        '/bloc':(context)=>BlocDemo(),
       },
 //      home: MyHomePage(title: "my title",),
     );
