@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter/demo/http/http_demo.dart';
 import 'package:my_flutter/demo/stream/stream_demo.dart';
 import 'demo/ListView_demo.dart';
 import 'demo/Drawer_demo.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/bloc',
+      initialRoute: '/http',
       routes: {
         '/': (context) => MyHomePage(title: "my title"),
         '/form': (context) => FormDemo(),
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/stream':(context)=>StreamDemo(),
         '/rxdart':(context)=>RxDartDemo(),
         '/bloc':(context)=>BlocDemo(),
+        '/http':(context)=>HttpDemo(),
       },
 //      home: MyHomePage(title: "my title",),
     );
