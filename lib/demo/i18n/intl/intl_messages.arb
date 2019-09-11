@@ -1,0 +1,17 @@
+{
+  "@@last_modified": "2019-09-11T22:19:17.046088",
+  "title": "Hello World",
+  "@title": {
+    "description": "Title for the Demo application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "greet": "hello {name}",
+  "@greet": {
+    "description": "greet someone.",
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  }
+}

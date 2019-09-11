@@ -13,7 +13,10 @@ import 'demo/material_components.dart';
 import 'demo/state/state_manager_demo.dart';
 import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
-
+import 'demo/animation/animation_demo.dart';
+import 'demo/i18n/i18n_demo.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'demo/i18n/map/my_localization.dart';
 void main() => runApp(MyApp());
 
 //新建一个自己的app
@@ -23,6 +26,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //使用材料风格
     return MaterialApp(
+      //文字书写的方向
+      localizationsDelegates: [
+        MyLocalizationDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      //支持的语言
+      supportedLocales: [
+        Locale('en', 'US'),
+        Locale('zh', 'CN'),
+      ],
       //关闭debug标签
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -30,7 +44,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/http',
+      initialRoute: '/i18n',
       routes: {
         '/': (context) => MyHomePage(title: "my title"),
         '/form': (context) => FormDemo(),
@@ -40,6 +54,8 @@ class MyApp extends StatelessWidget {
         '/rxdart':(context)=>RxDartDemo(),
         '/bloc':(context)=>BlocDemo(),
         '/http':(context)=>HttpDemo(),
+        '/animation':(context)=>AnimationDemo(),
+        '/i18n':(context)=>I18nDemo(),
       },
 //      home: MyHomePage(title: "my title",),
     );
