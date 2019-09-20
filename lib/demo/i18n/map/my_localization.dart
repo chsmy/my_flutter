@@ -5,8 +5,7 @@ class MyLocalization{
 
   MyLocalization(this.locale);
 
-
-  static MyLocalization of(BuildContext context){
+  static MyLocalization of(BuildContext context) {
     return Localizations.of<MyLocalization>(context, MyLocalization);
   }
 
@@ -26,7 +25,7 @@ class MyLocalization{
 
 
 
-class MyLocalizationDelegate extends LocalizationsDelegate{
+class MyLocalizationDelegate extends LocalizationsDelegate<MyLocalization>{
 
   MyLocalizationDelegate();
 
@@ -36,7 +35,7 @@ class MyLocalizationDelegate extends LocalizationsDelegate{
   }
 
   @override
-  Future load(Locale locale) {
+  Future<MyLocalization> load(Locale locale) {
     return SynchronousFuture<MyLocalization>(MyLocalization(locale));
   }
 

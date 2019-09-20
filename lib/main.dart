@@ -17,6 +17,7 @@ import 'demo/animation/animation_demo.dart';
 import 'demo/i18n/i18n_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'demo/i18n/map/my_localization.dart';
+import 'demo/i18n/intl/my_demo_localization.dart';
 void main() => runApp(MyApp());
 
 //新建一个自己的app
@@ -26,9 +27,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //使用材料风格
     return MaterialApp(
+      locale: Locale('zh','CN'),
+//      locale: Locale('en','US'),
       //文字书写的方向
       localizationsDelegates: [
-        MyLocalizationDelegate(),
+//        MyLocalizationDelegate(),
+        MyDemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
@@ -44,7 +48,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/i18n',
+      initialRoute: '/state_manager',
       routes: {
         '/': (context) => MyHomePage(title: "my title"),
         '/form': (context) => FormDemo(),

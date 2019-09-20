@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_flutter/demo/i18n/map/my_localization.dart';
+import 'package:my_flutter/demo/i18n/intl/my_demo_localization.dart';
 
 //https://flutterchina.club/tutorials/internationalization/
 
@@ -33,7 +34,8 @@ class _I18nDemoHoneState extends State<I18nDemoHone> {
           children: <Widget>[
             Text(locale.languageCode),
             Text(
-              ''
+//                MyDemoLocalization.of(context).title
+                  MyDemoLocalization.of(context).greet('dog')
 //                Localizations.of(context, MyLocalization).title,
 //                MyLocalization.of(context).title
                 ),

@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:mobx/mobx.dart';
+//包含生成的文件
+part 'state_manager_demo.g.dart';
 
 class StateManagerDemo extends StatefulWidget {
   @override
@@ -48,20 +51,32 @@ class Counter1 extends StatelessWidget {
     );
   }
 }
-class Counter extends StatelessWidget {
+class Counter0 extends StatelessWidget {
   final int count;
-  final VoidCallback voidCallback;
-  Counter(this.count,this.voidCallback);
+  Counter0(this.count);
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ActionChip(
+      child: Chip(
         label: Text('$count'),
-        onPressed: voidCallback,
       ),
     );
   }
 }
+//class Counter extends StatelessWidget {
+//  final int count;
+//  final VoidCallback voidCallback;
+//  Counter(this.count,this.voidCallback);
+//  @override
+//  Widget build(BuildContext context) {
+//    return Center(
+//      child: ActionChip(
+//        label: Text('$count'),
+//        onPressed: voidCallback,
+//      ),
+//    );
+//  }
+//}
 //使用InheritedWidget来管理状态，
 class ContentProvider extends InheritedWidget {
   final int count;
@@ -90,7 +105,7 @@ class ContentProvider extends InheritedWidget {
 //该库最初是从Fuchsia代码库中提取的
 //https://pub.dev/packages/scoped_model
 //该库主要分为三个部分
-//1 Model class 扩展此类以创建自己的模型，例如SearchModel或UserModel。你可以听模特的变化！
+//1 Model class 扩展此类以创建自己的模型，例如SearchModel或UserModel。我们可以监听数据的变化！
 //2 ScopedModel 小部件 把Model包装到ScopedModel中，它内部的所有部件都能拿到model中的数据
 //3 ScopedModelDescendant 只要Model发生改变 它就会改变
 class StateModelDemo extends StatelessWidget {
@@ -143,3 +158,19 @@ class CountModel extends Model{
    }
 }
 
+
+//flutter_mobx
+//https://pub.dev/packages?q=Mobx
+//https://github.com/mobxjs/mobx.dart/tree/master/mobx_codegen
+//flutter packages pub run build_runner build
+class Counter = _Counter3 with _$Counter;
+
+abstract class _Counter3 with Store {
+  @observable
+  int value = 0;
+
+  @action
+  void increment() {
+    value++;
+  }
+}

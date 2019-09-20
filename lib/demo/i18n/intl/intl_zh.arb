@@ -1,12 +1,12 @@
 {
-  "@@last_modified": "2019-09-11T22:19:17.046088",
-  "title": "Hello World",
+  "@@last_modified": "2019-09-19T20:52:04.296018",
+  "title": "你好世界",
   "@title": {
-    "description": "Title for the Demo application",
+    "description": "世界很美丽",
     "type": "text",
     "placeholders": {}
   },
-  "greet": "hello {name}",
+  "greet": "你好 {name}",
   "@greet": {
     "description": "greet someone.",
     "type": "text",
