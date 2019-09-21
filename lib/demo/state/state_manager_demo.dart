@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:mobx/mobx.dart';
 //包含生成的文件
@@ -162,7 +163,9 @@ class CountModel extends Model{
 //flutter_mobx
 //https://pub.dev/packages?q=Mobx
 //https://github.com/mobxjs/mobx.dart/tree/master/mobx_codegen
-//flutter packages pub run build_runner build
+//生成 flutter packages pub run build_runner build
+//更改 pub run build_runner watch
+
 class Counter = _Counter3 with _$Counter;
 
 abstract class _Counter3 with Store {
@@ -172,5 +175,40 @@ abstract class _Counter3 with Store {
   @action
   void increment() {
     value++;
+  }
+}
+
+class MobxDemo extends StatefulWidget {
+  @override
+  _MobxDemoState createState() => _MobxDemoState();
+}
+
+class _MobxDemoState extends State<MobxDemo> {
+  final Counter counter = Counter();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('StateModelDemo'),
+      ),
+
+      body: Center(
+        child: Observer(
+            builder: (_)=>ActionChip(
+              label: Text('${counter.value}'),
+              onPressed: (){
+                counter.increment();
+              },
+            ),
+        ),
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed:(){
+          counter.increment();
+        },
+      ),
+    );
   }
 }

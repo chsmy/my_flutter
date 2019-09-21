@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyHomePage(title: "my title"),
         '/form': (context) => FormDemo(),
         '/mat':(context)=>MaterialComponentsDemo(),
-        '/state_manager':(context)=>StateModelDemo(),
+        '/state_manager':(context)=>MobxDemo(),
         '/stream':(context)=>StreamDemo(),
         '/rxdart':(context)=>RxDartDemo(),
         '/bloc':(context)=>BlocDemo(),
