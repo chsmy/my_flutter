@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:mobx/mobx.dart';
+import 'package:provider/provider.dart';
 //包含生成的文件
-part 'state_manager_demo.g.dart';
+//part 'state_manager_demo.g.dart';
 
 class StateManagerDemo extends StatefulWidget {
   @override
@@ -166,7 +167,7 @@ class CountModel extends Model{
 //生成 flutter packages pub run build_runner build
 //更改 pub run build_runner watch
 
-class Counter = _Counter3 with _$Counter;
+//class Counter = _Counter3 with _$Counter;
 
 abstract class _Counter3 with Store {
   @observable
@@ -178,37 +179,72 @@ abstract class _Counter3 with Store {
   }
 }
 
-class MobxDemo extends StatefulWidget {
-  @override
-  _MobxDemoState createState() => _MobxDemoState();
-}
 
-class _MobxDemoState extends State<MobxDemo> {
-  final Counter counter = Counter();
+
+//Provider
+class ProviderDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final counter = Provider.of<Counter>(context);
+    return  Scaffold(
       appBar: AppBar(
         title: Text('StateModelDemo'),
       ),
-
-      body: Center(
-        child: Observer(
-            builder: (_)=>ActionChip(
-              label: Text('${counter.value}'),
-              onPressed: (){
-                counter.increment();
-              },
-            ),
-        ),
+      body: ActionChip(
+        label: Text('${counter._count}'),
+        onPressed: (){
+          Provider.of<Counter>(context, listen: false).increment();
+        },
       ),
-
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed:(){
-          counter.increment();
+        onPressed: (){
+          Provider.of<Counter>(context, listen: false).increment();
         },
       ),
     );
+  }
+}
+//class MobxDemo extends StatefulWidget {
+//  @override
+//  _MobxDemoState createState() => _MobxDemoState();
+//}
+
+//class _MobxDemoState extends State<MobxDemo> {
+//  final Counter counter = Counter();
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text('StateModelDemo'),
+//      ),
+//
+//      body: Center(
+//        child: Observer(
+//            builder: (_)=>ActionChip(
+//              label: Text('${counter.value}'),
+//              onPressed: (){
+//                counter.increment();
+//              },
+//            ),
+//        ),
+//      ),
+//
+//      floatingActionButton: FloatingActionButton(
+//        child: Icon(Icons.add),
+//        onPressed:(){
+//          counter.increment();
+//        },
+//      ),
+//    );
+//  }
+//}
+class Counter with ChangeNotifier {
+  int _count = 0;
+  int get count => _count;
+
+  void increment() {
+    _count++;
+    notifyListeners();
   }
 }

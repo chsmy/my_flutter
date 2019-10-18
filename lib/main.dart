@@ -18,7 +18,12 @@ import 'demo/i18n/i18n_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'demo/i18n/map/my_localization.dart';
 import 'demo/i18n/intl/my_demo_localization.dart';
-void main() => runApp(MyApp());
+import 'package:provider/provider.dart';
+void main() => runApp(
+    MultiProvider(child: MyApp(),providers: [
+      ChangeNotifierProvider(builder: (_) => Counter()),
+    ],)
+);
 
 //新建一个自己的app
 class MyApp extends StatelessWidget {
@@ -53,7 +58,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyHomePage(title: "my title"),
         '/form': (context) => FormDemo(),
         '/mat':(context)=>MaterialComponentsDemo(),
-        '/state_manager':(context)=>MobxDemo(),
+        '/state_manager':(context)=>ProviderDemo(),
         '/stream':(context)=>StreamDemo(),
         '/rxdart':(context)=>RxDartDemo(),
         '/bloc':(context)=>BlocDemo(),
