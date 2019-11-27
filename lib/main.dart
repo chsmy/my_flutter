@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/state_manager',
+      initialRoute: '/form',
       routes: {
         '/': (context) => MyHomePage(title: "my title"),
         '/form': (context) => FormDemo(),

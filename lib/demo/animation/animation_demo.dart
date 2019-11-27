@@ -41,6 +41,24 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome> with TickerProvid
     animation = Tween(begin: 32.0,end: 100.0).animate(curvedAnimation);
     animationColor = ColorTween(begin: Colors.red,end: Colors.green).animate(curvedAnimation);
 
+    animation.addListener((){
+      //调用setState来刷新界面
+      setState(() {
+      });
+    });
+    animation.addStatusListener((status){
+      debugPrint('status $status');
+      switch (status){
+        case AnimationStatus.dismissed:
+          break;
+        case AnimationStatus.forward:
+          break;
+        case AnimationStatus.reverse:
+          break;
+        case AnimationStatus.completed:
+          break;
+      }
+    });
 //    animationController.addListener((){
 //      debugPrint('value ${animationController.value}');
 //      setState(() {
