@@ -53,28 +53,26 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/form',
-      routes: {
-        '/': (context) => MyHomePage(title: "my title"),
-        '/form': (context) => FormDemo(),
-        '/mat':(context)=>MaterialComponentsDemo(),
-        '/state_manager':(context)=>ProviderDemo(),
-        '/stream':(context)=>StreamDemo(),
-        '/rxdart':(context)=>RxDartDemo(),
-        '/bloc':(context)=>BlocDemo(),
-        '/http':(context)=>HttpDemo(),
-        '/animation':(context)=>AnimationDemo(),
-        '/i18n':(context)=>I18nDemo(),
-      },
-//      home: MyHomePage(title: "my title",),
+//      initialRoute: '/form',
+//      routes: {
+//        '/': (context) => MyHomePage(title: "my title"),
+//        '/form': (context) => FormDemo(),
+//        '/mat':(context)=>MaterialComponentsDemo(),
+//        '/state_manager':(context)=>ProviderDemo(),
+//        '/stream':(context)=>StreamDemo(),
+//        '/rxdart':(context)=>RxDartDemo(),
+//        '/bloc':(context)=>BlocDemo(),
+//        '/http':(context)=>HttpDemo(),
+//        '/animation':(context)=>AnimationDemo(),
+//        '/i18n':(context)=>I18nDemo(),
+//      },
+      home: BottomNavigationBarDemo(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +81,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
         //头部
         appBar: AppBar(
-          title: Text(title),
+          title: Text('home'),
           elevation: 0.0,
           actions: <Widget>[
             IconButton(
@@ -110,7 +108,7 @@ class MyHomePage extends StatelessWidget {
           SliverDemo()
         ]),
         drawer: DrawerDemo(),
-        bottomNavigationBar: BottomNavigationBarDemo(),
+//        bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
   }
