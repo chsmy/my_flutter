@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'AnimateDemo1.dart';
 import 'AnimateDemo4.dart';
+import 'AnimateDemo5.dart';
+import 'AnimateDemo6.dart';
 
 class AnimationDemo extends StatelessWidget {
   @override
@@ -10,7 +12,7 @@ class AnimationDemo extends StatelessWidget {
       appBar: AppBar(
         title: Text('AnimationDemo'),
       ),
-      body: AnimateDemo4(),
+      body: AnimateDemo5(),
     );
   }
 }
